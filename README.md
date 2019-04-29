@@ -74,16 +74,19 @@ This will take a few minutes to create 40 users, some photos for each user, some
 
 ## Queries to write
 
-Here are some questions to answer:
+Here are some questions to answer. Give it a shot in `rails console`:
 
 For the user `"Trina"`,
 
   - How many photos has the user posted?
   - How many photos has the user liked?
-  - How many photos has the user commented on?
+  - How many comments has the user made?
+     - How many photos has the user commented on? Is this the same as the number of comments the user has made? Hint: there's a method called `.distinct` that you can call on a collection to remove duplicates.
   - How many follow requests has the user sent?
      - How many of those were accepted?
   - How many follow requests has the user received?
      - How many of those were accepted?
   - How many photos are in the user's feed?
   - How many photos have the people the user is following liked?
+
+Once you've answered the questions for `"Trina"` in `rails console`, try defining instance methods in `app/models/user.rb` that will make it easy to answer these question for any user.
