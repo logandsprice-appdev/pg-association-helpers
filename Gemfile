@@ -67,6 +67,7 @@ group :development do
   gem 'draft_generators', github: 'firstdraft/draft_generators'
   gem 'letter_opener'
   gem 'meta_request'
+  gem "rails-erd"
 end
 
 group :test do
