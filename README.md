@@ -58,8 +58,32 @@ rails dummy:reset
 
 This will take a few minutes to create 40 users, some photos for each user, some followers, likes, comments, etc.
 
+
+> Note that if for some reason later you want to reset the database again, you need to first destroy it:
+>
+> ```bash
+> rails db:drop
+> ```
+>
+> and then re-create and re-populate it:
+>
+> ```bash
+> rails db:migrate
+> rails dummy:reset
+> ```
+
 ## Queries to write
 
 Here are some questions to answer:
 
- - 
+For the user `"Trina"`,
+
+  - How many photos has the user posted?
+  - How many photos has the user liked?
+  - How many photos has the user commented on?
+  - How many follow requests has the user sent?
+     - How many of those were accepted?
+  - How many follow requests has the user received?
+     - How many of those were accepted?
+  - How many photos are in the user's feed?
+  - How many photos have the people the user is following liked?
