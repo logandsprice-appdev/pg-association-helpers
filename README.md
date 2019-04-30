@@ -83,10 +83,132 @@ For the user `"Trina"`,
   - How many comments has the user made?
      - How many photos has the user commented on? Is this the same as the number of comments the user has made? Hint: there's a method called `.distinct` that you can call on a collection to remove duplicates.
   - How many follow requests has the user sent?
-     - How many of those were accepted?
+     - How many of those were accepted? (I.e. how many people is the user following?)
   - How many follow requests has the user received?
-     - How many of those were accepted?
-  - How many photos are in the user's feed?
+     - How many of those were accepted? (I.e. how many followers does the user have?)
+  - What are the usernames of all of the people the user is following?
+  - How many photos are in the user's feed (photos posted by the people the user is following)?
   - How many photos have the people the user is following liked?
 
 Once you've answered the questions for `"Trina"` in `rails console`, try defining instance methods in `app/models/user.rb` that will make it easy to answer these question for any user.
+
+require "rails_helper"
+
+describe Photo, "#poster" do
+  it "returns the user who posted the photo" do
+
+  end
+end
+
+
+describe Photo, "#comments" do
+  it "returns the comments made on the photo" do
+
+  end
+end
+
+describe Comment, "#commenter" do
+  it "returns the user who authored the comment" do
+
+  end
+end
+
+describe Photo, "#likes" do
+  it "returns the likes made on the photo" do
+
+  end
+end
+
+describe Photo, "#fans" do
+  it "returns the users that have liked the photo" do
+
+  end
+end
+
+describe Photo, "#fan_list" do
+  it "returns the usernames of the users that have liked the photo as a sentence" do
+
+  end
+end
+
+describe User, "#comments" do
+  it "returns the comments the user has made" do
+
+  end
+end
+
+describe User, "#own_photos" do
+  it "returns the photos posted by the user", points: 2 do
+
+  end
+end
+
+describe User, "#liked_photos" do
+  it "returns the photos the user has liked" do
+
+  end
+end
+
+describe User, "#commented_photos" do
+  context "when the user made only one comment per photo" do
+    it "returns the photos the user has commented on" do
+
+    end
+  end
+end
+
+describe User, "#commented_photos" do
+  context "when the user made more than one comment per photo" do
+    it "returns the photos the user has commented on" do
+
+    end
+  end
+end
+
+describe User, "#sent_follow_requests" do
+  it "returns all of the follow requests that were sent by the user" do
+
+  end
+end
+
+describe User, "#received_follow_requests" do
+  it "returns all of the follow requests that were received by the user" do
+
+  end
+end
+
+describe User, "#accepted_sent_follow_requests" do
+  it "returns the follow requests that were sent by the user and accepted" do
+
+  end
+end
+
+describe User, "#accepted_received_follow_requests" do
+  it "returns the follow requests that were received by the user and accepted" do
+
+  end
+end
+
+describe User, "#followers" do
+  it "returns the people whose follow requests the user has accepted" do
+
+  end
+end
+
+describe User, "#following" do
+  it "returns the people that have accepted the user's follow requests" do
+
+  end
+end
+
+describe User, "#feed" do
+  it "returns the photos posted by the people the user is following" do
+
+  end
+end
+
+describe User, "#discover" do
+  it "returns the photos that are liked by the people the user is following" do
+
+  end
+end
