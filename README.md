@@ -90,18 +90,19 @@ Methods for you to define:
     Hint: Rails adds a handy method to `Array`s of strings called  `.to_sentence`:
 
     https://api.rubyonrails.org/classes/Array.html#method-i-to_sentence
- - `User#comments` should return the comments the user has made
- - `User#own_photos` should return the photos posted by the user
- - `User#liked_photos` should return the photos the user has liked
- - `User#commented_photos` should return the photos the user has commented on
- - `User#sent_follow_requests` should return all of the follow requests that were sent by the user
- - `User#received_follow_requests` should return all of the follow requests that were received by the user
- - `User#accepted_sent_follow_requests` should return the follow requests that were sent by the user and accepted
- - `User#accepted_received_follow_requests` should return the follow requests that were received by the user and accepted
- - `User#followers` should return the people whose follow requests the user has accepted
- - `User#following` should return the people that have accepted the user's follow requests
- - `User#feed` should return the photos posted by the people the user is following
- - `User#discover` should return the photos that are liked by the people the user is following
+ - `User#comments` should return the comments the user has made.
+ - `User#own_photos` should return the photos posted by the user.
+ - `User#likes` should return the likes created by the user.
+ - `User#liked_photos` should return the photos the user has liked.
+ - `User#commented_photos` should return the photos the user has commented on.
+ - `User#sent_follow_requests` should return all of the follow requests that were sent by the user.
+ - `User#received_follow_requests` should return all of the follow requests that were received by the user.
+ - `User#accepted_sent_follow_requests` should return the follow requests that were sent by the user and accepted.
+ - `User#accepted_received_follow_requests` should return the follow requests that were received by the user and accepted.
+ - `User#followers` should return the people whose follow requests the user has accepted.
+ - `User#following` should return the people that have accepted the user's follow requests.
+ - `User#feed` should return the photos posted by the people the user is following.
+ - `User#discover` should return the photos that are liked by the people the user is following.
 
 ---
 

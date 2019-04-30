@@ -202,7 +202,7 @@ describe User, "#own_photos" do
 end
 
 describe User, "#likes" do
-  it "returns the user's likes", :points => 1 do
+  it "returns the likes created by the user", :points => 1 do
     user = User.new
     user.save
 
