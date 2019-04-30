@@ -74,9 +74,38 @@ This will take a few minutes to create 40 users, some photos for each user, some
 
 ## Queries to write
 
-Here are some questions to answer. Give it a shot in `rails console`:
+Your goal, ultimately, is to define the following methods. While you're trying to figure out how to do so, it will probably be helpful to bounce between the `rails console` (to experiment) and your model files (to write multi-step queries).
 
-For the user `"Trina"`,
+**Note:** In the Ruby community, a shorthand for saying "an instance method called `zebra` on `Photo`" is `Photo#zebra`. (I know, unfortunately this is yet _another_ thing that the octothorpe symbol is used for.) A shorthand for saying "a **class** method on `Photo` called `zebra`" is `Photo.zebra`.
+
+Methods for you to define:
+
+ - `Photo#poster` should return the user who posted the photo.
+ - `Photo#comments` should return the comments made on the photo.
+ - `Comment#commenter` should return the user who authored the comment.
+ - `Photo#likes` should return the likes made on the photo.
+ - `Photo#fans` should return the users that have liked the photo.
+ - `Photo#fan_list` should return the usernames of the users that have liked the photo as a sentence.
+
+    Hint: Rails adds a handy method to `Array`s of strings called  `.to_sentence`:
+
+    https://api.rubyonrails.org/classes/Array.html#method-i-to_sentence
+ - `User#comments` should return the comments the user has made
+ - `User#own_photos` should return the photos posted by the user
+ - `User#liked_photos` should return the photos the user has liked
+ - `User#commented_photos` should return the photos the user has commented on
+ - `User#sent_follow_requests` should return all of the follow requests that were sent by the user
+ - `User#received_follow_requests` should return all of the follow requests that were received by the user
+ - `User#accepted_sent_follow_requests` should return the follow requests that were sent by the user and accepted
+ - `User#accepted_received_follow_requests` should return the follow requests that were received by the user and accepted
+ - `User#followers` should return the people whose follow requests the user has accepted
+ - `User#following` should return the people that have accepted the user's follow requests
+ - `User#feed` should return the photos posted by the people the user is following
+ - `User#discover` should return the photos that are liked by the people the user is following
+
+---
+
+Here are some `rails console` experiments to try. For the user `"Trina"`,
 
   - How many photos has the user posted?
   - How many photos has the user liked?
@@ -89,126 +118,3 @@ For the user `"Trina"`,
   - What are the usernames of all of the people the user is following?
   - How many photos are in the user's feed (photos posted by the people the user is following)?
   - How many photos have the people the user is following liked?
-
-Once you've answered the questions for `"Trina"` in `rails console`, try defining instance methods in `app/models/user.rb` that will make it easy to answer these question for any user.
-
-require "rails_helper"
-
-describe Photo, "#poster" do
-  it "returns the user who posted the photo" do
-
-  end
-end
-
-
-describe Photo, "#comments" do
-  it "returns the comments made on the photo" do
-
-  end
-end
-
-describe Comment, "#commenter" do
-  it "returns the user who authored the comment" do
-
-  end
-end
-
-describe Photo, "#likes" do
-  it "returns the likes made on the photo" do
-
-  end
-end
-
-describe Photo, "#fans" do
-  it "returns the users that have liked the photo" do
-
-  end
-end
-
-describe Photo, "#fan_list" do
-  it "returns the usernames of the users that have liked the photo as a sentence" do
-
-  end
-end
-
-describe User, "#comments" do
-  it "returns the comments the user has made" do
-
-  end
-end
-
-describe User, "#own_photos" do
-  it "returns the photos posted by the user", points: 2 do
-
-  end
-end
-
-describe User, "#liked_photos" do
-  it "returns the photos the user has liked" do
-
-  end
-end
-
-describe User, "#commented_photos" do
-  context "when the user made only one comment per photo" do
-    it "returns the photos the user has commented on" do
-
-    end
-  end
-end
-
-describe User, "#commented_photos" do
-  context "when the user made more than one comment per photo" do
-    it "returns the photos the user has commented on" do
-
-    end
-  end
-end
-
-describe User, "#sent_follow_requests" do
-  it "returns all of the follow requests that were sent by the user" do
-
-  end
-end
-
-describe User, "#received_follow_requests" do
-  it "returns all of the follow requests that were received by the user" do
-
-  end
-end
-
-describe User, "#accepted_sent_follow_requests" do
-  it "returns the follow requests that were sent by the user and accepted" do
-
-  end
-end
-
-describe User, "#accepted_received_follow_requests" do
-  it "returns the follow requests that were received by the user and accepted" do
-
-  end
-end
-
-describe User, "#followers" do
-  it "returns the people whose follow requests the user has accepted" do
-
-  end
-end
-
-describe User, "#following" do
-  it "returns the people that have accepted the user's follow requests" do
-
-  end
-end
-
-describe User, "#feed" do
-  it "returns the photos posted by the people the user is following" do
-
-  end
-end
-
-describe User, "#discover" do
-  it "returns the photos that are liked by the people the user is following" do
-
-  end
-end
