@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Photo, "#poster" do
-  it "returns the user who posted the photo" do
+  it "returns the user who posted the photo", :points => 1 do
     other_user = User.new
     other_user.save
 
@@ -18,7 +18,7 @@ end
 
 
 describe Photo, "#comments" do
-  it "returns the comments made on the photo" do
+  it "returns the comments made on the photo", :points => 1 do
     photo = Photo.new
     photo.save
 
@@ -42,7 +42,7 @@ describe Photo, "#comments" do
 end
 
 describe Comment, "#commenter" do
-  it "returns the user who authored the comment" do
+  it "returns the user who authored the comment", :points => 1 do
     other_user = User.new
     other_user.save
 
@@ -58,7 +58,7 @@ describe Comment, "#commenter" do
 end
 
 describe Photo, "#likes" do
-  it "returns the likes made on the photo" do
+  it "returns the likes made on the photo", :points => 1 do
     photo = Photo.new
     photo.save
 
@@ -82,7 +82,7 @@ describe Photo, "#likes" do
 end
 
 describe Photo, "#fans" do
-  it "returns the users that have liked the photo" do
+  it "returns the users that have liked the photo", :points => 2 do
     photo = Photo.new
     photo.save
 
@@ -118,7 +118,7 @@ describe Photo, "#fans" do
 end
 
 describe Photo, "#fan_list" do
-  it "returns the usernames of the users that have liked the photo as a sentence" do
+  it "returns the usernames of the users that have liked the photo as a sentence", :points => 3 do
     photo = Photo.new
     photo.save
 
@@ -154,7 +154,7 @@ describe Photo, "#fan_list" do
 end
 
 describe User, "#comments" do
-  it "returns the comments the user has made" do
+  it "returns the comments the user has made", :points => 1 do
     user = User.new
     user.save
 
@@ -178,7 +178,7 @@ describe User, "#comments" do
 end
 
 describe User, "#own_photos" do
-  it "returns the photos posted by the user", points: 2 do
+  it "returns the photos posted by the user", :points => 1 do
     user = User.new
     user.save
 
@@ -202,7 +202,7 @@ describe User, "#own_photos" do
 end
 
 describe User, "#likes" do
-  it "returns the user's likes" do
+  it "returns the user's likes", :points => 1 do
     user = User.new
     user.save
 
@@ -226,7 +226,7 @@ describe User, "#likes" do
 end
 
 describe User, "#liked_photos" do
-  it "returns the photos the user has liked" do
+  it "returns the photos the user has liked", :points => 2 do
     user = User.new
     user.save
 
@@ -263,7 +263,7 @@ end
 
 describe User, "#commented_photos" do
   context "when the user made only one comment per photo" do
-    it "returns the photos the user has commented on" do
+    it "returns the photos the user has commented on", :points => 2 do
       user = User.new
       user.save
 
@@ -301,7 +301,7 @@ end
 
 describe User, "#commented_photos" do
   context "when the user made more than one comment per photo" do
-    it "returns the photos the user has commented on" do
+    it "returns the photos the user has commented on", :points => 3 do
       user = User.new
       user.save
 
@@ -348,7 +348,7 @@ describe User, "#commented_photos" do
 end
 
 describe User, "#sent_follow_requests" do
-  it "returns all of the follow requests that were sent by the user" do
+  it "returns all of the follow requests that were sent by the user", :points => 1 do
     user = User.new
     user.save
 
@@ -372,7 +372,7 @@ describe User, "#sent_follow_requests" do
 end
 
 describe User, "#received_follow_requests" do
-  it "returns all of the follow requests that were received by the user" do
+  it "returns all of the follow requests that were received by the user", :points => 1 do
     user = User.new
     user.save
 
@@ -396,7 +396,7 @@ describe User, "#received_follow_requests" do
 end
 
 describe User, "#accepted_sent_follow_requests" do
-  it "returns the follow requests that were sent by the user and accepted" do
+  it "returns the follow requests that were sent by the user and accepted", :points => 2 do
     user = User.new
     user.save
 
@@ -422,7 +422,7 @@ describe User, "#accepted_sent_follow_requests" do
 end
 
 describe User, "#accepted_received_follow_requests" do
-  it "returns the follow requests that were received by the user and accepted" do
+  it "returns the follow requests that were received by the user and accepted", :points => 2 do
     user = User.new
     user.save
 
@@ -448,7 +448,7 @@ describe User, "#accepted_received_follow_requests" do
 end
 
 describe User, "#followers" do
-  it "returns the people who the user has accepted follow requests from" do
+  it "returns the people who the user has accepted follow requests from", :points => 3 do
     user = User.new
     user.save
 
@@ -493,7 +493,7 @@ describe User, "#followers" do
 end
 
 describe User, "#following" do
-  it "returns the people who have accepted follow requests from the user" do
+  it "returns the people who have accepted follow requests from the user", :points => 3 do
     user = User.new
     user.save
 
@@ -538,7 +538,7 @@ describe User, "#following" do
 end
 
 describe User, "#feed" do
-  it "returns the photos posted by the people the user is following" do
+  it "returns the photos posted by the people the user is following", :points => 4 do
     user = User.new
     user.save
 
@@ -618,7 +618,7 @@ describe User, "#feed" do
 end
 
 describe User, "#discover" do
-  it "returns the photos that are liked by the people the user is following" do
+  it "returns the photos that are liked by the people the user is following", :points => 4 do
     user = User.new
     user.save
 
