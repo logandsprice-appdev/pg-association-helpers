@@ -34,5 +34,7 @@ module PhotogramQueries
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    Rails.application.config.active_record.belongs_to_required_by_default = false
   end
 end
